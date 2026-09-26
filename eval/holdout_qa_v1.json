@@ -4,7 +4,7 @@
   "created_on": "2026-09-26",
   "annotation": "Single-author labels checked against source chunks; an independent second reviewer is still needed.",
   "corpus_commit": "0e1648565ab60cadc70d2bdfbd9fae0b57208383",
-  "corpus_manifest_sha256": "78BD4FABD439CFC1BFC66B60DC07AFEB77C814BA498A738BDB190435685A455C",
+  "corpus_manifest_sha256": "FF6C1FBE733490147BFC901A3ABE22600FA364D833CC66630CE07A8466A7ED81",
   "top_k": 5,
   "positive": [
     {

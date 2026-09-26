@@ -52,3 +52,6 @@
 ```
 
 输出默认示例位于被 Git 忽略的 `data/`；检查 `answer`、`gold_chunk_ids` 和 `answer_points_for_manual_review` 后，再人工判定答案是否正确及每句话是否受证据支持。脚本只验证引用 ID 的结构合法性，不能自动验证语义忠实度。选定的少量题仅是接口探针，不能当全量准确率。token 用量不直接等于费用；本项目没有固定价格表，费用需按调用时的官方计费规则另算。真实调用会将**公开课程片段及问题**发送到 DeepSeek，绝不能传入个人求职资料或私有 PDF。当前未配置密钥，尚无真实探针报告。
+## 跨平台语料快照修复记录
+
+首次提交在 Windows 上生成冻结标签时，`manifest.json` 工作区使用 CRLF，而 GitHub Ubuntu 检出为 LF；内容相同但原始字节 SHA-256 不同，导致 [首次阶段 B CI 运行](https://github.com/Lyzzone/MeduAgent/actions/runs/36218146630) 的测试因快照校验失败。现用 `.gitattributes` 将语料清单、冻结标签和报告固定为 LF，并将标签中的清单哈希更新为 Git 实际字节的 `ff6c1fbe733490147bfc901a3abe22600fa364d833cc66630ce07a8466a7ed81`。题目、金标准片段与检索逻辑未改；重建后四个原始计数仍为 14/20、12/20、14/20、8/8。更新后的 Windows 与 Ubuntu WSL 项目测试均为 22/22；仍需 GitHub Actions 复核。

@@ -1,10 +1,10 @@
 {
   "dataset": "course_qa_holdout_v1",
-  "dataset_sha256": "5c957f0f3adaa555c96831ed817ea452c30e287f1b830a5e361ffe3eabe2185d",
-  "corpus_manifest_sha256": "78bd4fabd439cfc1bfc66b60dc07afeb77c814ba498a738bdb190435685a455c",
+  "dataset_sha256": "202f70e1447bbfa339c1439e5f53c8410e47f132ed5b0574789636486d817b8a",
+  "corpus_manifest_sha256": "ff6c1fbe733490147bfc901a3abe22600fa364d833cc66630ce07a8466a7ed81",
   "corpus_commit": "0e1648565ab60cadc70d2bdfbd9fae0b57208383",
   "annotation": "Single-author labels checked against source chunks; an independent second reviewer is still needed.",
-  "evaluated_at_utc": "2026-09-26T04:15:10.767432+00:00",
+  "evaluated_at_utc": "2026-09-26T04:50:58.870000+00:00",
   "runtime": {
     "python": "3.14.0",
     "sqlite": "3.50.4"
@@ -38,8 +38,8 @@
     }
   },
   "retrieval_latency_ms": {
-    "median": 3.35,
-    "p95": 6.08,
+    "median": 2.83,
+    "p95": 5.2,
     "count": 28
   },
   "failures": {
