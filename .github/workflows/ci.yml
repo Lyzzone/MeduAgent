@@ -27,7 +27,13 @@ jobs:
             exit 1
           fi
       - name: Run tests
-        run: python -m pytest -q
+        run: |
+          python -m pytest -x -q > pytest.log 2>&1 || {
+            cat pytest.log
+            python -c "from pathlib import Path; s='\n'.join(Path('pytest.log').read_text(errors='replace').splitlines()[-45:]); print('::error title=pytest failed::'+s.replace('%','%25').replace('\n','%0A').replace('\r','%0D'))"
+            exit 1
+          }
+          cat pytest.log
       - name: Run public offline cases
         run: python -m demo.run_demo
       - uses: actions/setup-node@v7
