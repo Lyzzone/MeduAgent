@@ -42,6 +42,6 @@ python3.13 -m venv .venv
 - 网页入口：[首页](../web/index.html)；接口入口：[FastAPI 路由](../app/api.py)。
 - 问答工作流：[LangGraph 图](../app/workflows/qa.py)；业务规则：[批改](../app/workflows/grading.py)、[简历](../app/workflows/resume.py)、[面试](../app/workflows/interview.py)。
 - 公开语料的上游署名、许可与哈希：[语料清单](../corpus/freecodecamp_zh/README.md)。根目录代码许可证尚待项目所有者选择，语料许可证不随代码许可证改变。
-- 自动检查：[GitHub Actions](../.github/workflows/ci.yml)。本地通过不代表云端 CI 已通过；上传后须查看实际 Actions 运行记录。
+- 自动检查：[GitHub Actions 配置](../.github/workflows/ci.yml)；[首次运行记录](https://github.com/Lyzzone/MeduAgent/actions/runs/36216182493) 已通过。每次新提交仍需查看对应运行结果。
 
 当前限制与下一阶段技术目标见 [面试展示版路线](INTERVIEW_SHOWCASE_ROADMAP.md)。简历中应准确表述为“实现四入口本地原型，课程问答有可引用的检索链路，其余三条为规则基线”。
