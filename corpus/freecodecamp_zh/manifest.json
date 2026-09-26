@@ -57,6 +57,33 @@
       "author": "John Mosesman",
       "translator": "zhannicholas",
       "sha256": "62722A9C7A88D4B1C207A0F1AA5E7DA3887243897EDA5E0CF5FFD770310CB85D"
+    },
+    {
+      "path": "http-vs-https.md",
+      "upstream_path": "chinese/articles/http-vs-https.md",
+      "original_url": "https://www.freecodecamp.org/news/http-vs-https/",
+      "author": "Annoh Karlgusta",
+      "translator": "Papaya HUANG",
+      "sha256": "0D24A8E9CFFE083B51074D50D22DC7BE047ECA0591FB533E62C7C5D1CA6D7516",
+      "added_on": "2026-09-26"
+    },
+    {
+      "path": "what-is-docker-learn-how-to-use-containers-with-examples.md",
+      "upstream_path": "chinese/articles/what-is-docker-learn-how-to-use-containers-with-examples.md",
+      "original_url": "https://www.freecodecamp.org/news/what-is-docker-learn-how-to-use-containers-with-examples/",
+      "author": "Sebastian Sigl",
+      "translator": "luojiyin",
+      "sha256": "DF9A1CBCAB4817BE0DE9EB3CC6129073B9310B2F740F738F33103962E9714F38",
+      "added_on": "2026-09-26"
+    },
+    {
+      "path": "what-is-sql-injection-how-to-prevent-it.md",
+      "upstream_path": "chinese/articles/what-is-sql-injection-how-to-prevent-it.md",
+      "original_url": "https://www.freecodecamp.org/news/what-is-sql-injection-how-to-prevent-it/",
+      "author": "Megan Kaczanowski",
+      "translator": "herosql",
+      "sha256": "A960F6A72E8F6FD49B348BEC16DA37489D06B5A4AD73332D0CFBFD530310B098",
+      "added_on": "2026-09-26"
     }
   ]
 }

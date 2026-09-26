@@ -92,7 +92,8 @@ def index_visibility(db_path: Path) -> str:
 def build_index(corpus_dir: Path, db_path: Path) -> dict[str, int]:
     """Validate pinned source hashes, then atomically replace the local index."""
     corpus_dir, db_path = corpus_dir.resolve(), db_path.resolve()
-    manifest = json.loads((corpus_dir / "manifest.json").read_text(encoding="utf-8"))
+    manifest_bytes = (corpus_dir / "manifest.json").read_bytes()
+    manifest = json.loads(manifest_bytes.decode("utf-8"))
     license_name = manifest["license_file"]
     if Path(license_name).name != license_name:
         raise ValueError("Unsafe license path")
@@ -108,6 +109,10 @@ def build_index(corpus_dir: Path, db_path: Path) -> dict[str, int]:
     chunk_count = 0
     try:
         create_schema(connection, "public")
+        connection.execute(
+            "INSERT INTO metadata VALUES (?, ?)",
+            ("corpus_manifest_sha256", hashlib.sha256(manifest_bytes).hexdigest()),
+        )
         for entry in manifest["files"]:
             name = entry["path"]
             if Path(name).name != name or not name.endswith(".md"):

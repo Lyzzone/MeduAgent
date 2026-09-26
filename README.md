@@ -18,6 +18,7 @@ MEduAgent 计划提供课程资料问答、简历诊断、试卷批改和模拟�
 - [ ] 完成真实生成模型验证、独立测试集、流式 token 与权限控制
 - [ ] 扩展简历、批改、面试流程
 - [x] 上传公开 GitHub 仓库并验证首次 CI
+- [x] 阶段 B 离线基线：9 篇教程、199 片段，冻结单人标注的 20 正例 + 8 无答案题并保存逐题报告
 - [ ] 完成线上部署与正式演示
 
 图片中出现的准确率和召回率仅作为参考示例，不是本项目的结果。任何公开简历中的技术和指标都以仓库代码、提交记录、评测数据及可复现报告为准。
@@ -26,7 +27,7 @@ MEduAgent 计划提供课程资料问答、简历诊断、试卷批改和模拟�
 
 首次公开提交 `4aba504` 的 [GitHub Actions 运行](https://github.com/Lyzzone/MeduAgent/actions/runs/36216182493) 已通过（2026-09-26）；后续提交需要各自通过 CI。
 
-首批测试资料见 [freeCodeCamp 中文教程语料](corpus/freecodecamp_zh/README.md)，保留上游署名、CC BY-SA 4.0 许可证、提交号与文件哈希。现有问答开发集曾参与调参，独立测试集尚待冻结。
+公开课程资料见 [freeCodeCamp 中文教程语料](corpus/freecodecamp_zh/README.md)，保留上游署名、CC BY-SA 4.0 许可证、提交号与文件哈希。新增的单人标注冻结集与原始失败案例见 [阶段 B 问答报告](docs/STAGE_B_QA_EVAL.md)；真实生成模型与向量对照尚待调用验证；受控的公开语料模型探针用法见同一报告。个人求职文档请按 [放置说明](docs/CAREER_DATA_PLACEMENT.md) 保存在 Git 忽略目录中。
 
 目标地址已确认为 `agent.cuitopendoor.top`，A 记录已解析。由于现有 Ubuntu 服务器仅约 1.6 GiB 内存，线上选用 SQLite FTS5 + 轻量向量索引，FastAPI 由 systemd 托管并复用现有 Nginx；模型走外部 API。详见部署方案。
 
@@ -42,7 +43,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m uvicorn app.api:app --host 127.0.0.1 --port 8765
 ```
 
-然后访问 `http://127.0.0.1:8765/`，首页选择课程问答、简历审查、试卷批改或模拟面试。课程问答默认 `QA_GENERATION_MODE=extractive`，只展示检索到的原文片段。其他三个页面使用独立规则接口，不调用大模型、不保存输入；它们的分析结果是功能基线，不能视作完整的智能诊断、正式成绩或面试评价。四入口实现和测试范围见 [网页工作台说明](docs/WEB_WORKBENCH_MVP.md)。Linux 启动时把上述解释器路径改为 `.venv/bin/python`。`data/`、`.venv/` 和个人学习笔记均由 `.gitignore` 排除。
+然后访问 `http://127.0.0.1:8765/`，首页依次选择课程资料、试卷批改、简历审查或模拟面试。课程问答默认 `QA_GENERATION_MODE=extractive`，只展示检索到的原文片段。其他三个页面使用独立规则接口，不调用大模型、不保存输入；它们的分析结果是功能基线，不能视作完整的智能诊断、正式成绩或面试评价。四入口实现和测试范围见 [网页工作台说明](docs/WEB_WORKBENCH_MVP.md)。Linux 启动时把上述解释器路径改为 `.venv/bin/python`。`data/`、`.venv/` 和个人学习笔记均由 `.gitignore` 排除。
 
 运行检查：
 
@@ -51,7 +52,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m eval.retrieval --output eval/reports/local_check.json
 ```
 
-开发集只有 12 个正例和 3 个范围外问题，曾用于调整检索规则；最新 `Recall@5=12/12` 只是开发集内的结果，不能作为独立测试成绩。原始逐题结果和早期失败版本保存在 `eval/reports/`。实现细节、运行限制与后续工作见 [M1 本地原型说明](docs/M1_LOCAL_MVP.md)。
+原开发集只有 12 个正例和 3 个范围外问题，曾用于调整检索规则；`Recall@5=12/12` 仍只是开发集内的结果。新增冻结集的首次 FTS5 基线为检索命中 14/20、引用命中正确证据 12/20、无答案拒答 8/8；数据由同一开发者标注且样本少，不能推断生产准确率。逐题原始结果、失败解释与复现命令见 [阶段 B 问答报告](docs/STAGE_B_QA_EVAL.md)。
 
 面向更真实场景的数据覆盖、标注和冻结测试集要求见 [数据与评测扩充方案](docs/DATASET_EXPANSION_PLAN.md)。当前规模只支持开发期验证。
 

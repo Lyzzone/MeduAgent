@@ -17,6 +17,7 @@ class Chunk:
 
 _HEADING = re.compile(r"^#{1,6}\s+(.+?)\s*#*\s*$")
 _IMAGE = re.compile(r"!?\[[^]]*\]\(https?://[^)]+\)")
+_ATTRIBUTION = re.compile(r"^>\s*-\s*(?:原文地址|原文作者|译者|校对者)\s*[:：]")
 
 
 def chunk_markdown(document_id: str, markdown: str, max_chars: int = 1100) -> list[Chunk]:
@@ -36,7 +37,7 @@ def chunk_markdown(document_id: str, markdown: str, max_chars: int = 1100) -> li
             sections.append((heading, lines))
             heading, lines = match.group(1), []
             continue
-        if line.startswith("> - 原文") or line.startswith("> - 译者") or line.startswith("> - 校对") or line.startswith("> - 原文作者"):
+        if _ATTRIBUTION.match(line):
             continue
         line = _IMAGE.sub("", line).strip()
         lines.append(line)

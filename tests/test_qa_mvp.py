@@ -18,8 +18,8 @@ CORPUS = Path(__file__).resolve().parents[1] / "corpus" / "freecodecamp_zh"
 def index(tmp_path_factory):
     db = tmp_path_factory.mktemp("index") / "course.sqlite3"
     counts = build_index(CORPUS, db)
-    assert counts["documents"] == 6
-    assert counts["chunks"] > 50
+    assert counts["documents"] == 9
+    assert counts["chunks"] > 156
     return db
 
 
@@ -86,7 +86,7 @@ def test_deepseek_adapter_contract_without_network(index, monkeypatch):
         observed["model"] = body["model"]
         evidence = json.loads(body["messages"][1]["content"])["evidence"]
         content = json.dumps({"answer": "Git 是版本控制系统。", "citation_ids": [evidence[0]["citation_id"]]})
-        return httpx.Response(200, json={"choices": [{"message": {"content": content}}]})
+        return httpx.Response(200, json={"model": "test-model", "usage": {"prompt_tokens": 42, "completion_tokens": 12, "total_tokens": 54}, "choices": [{"message": {"content": content}}]})
 
     monkeypatch.setattr(httpx, "Client", lambda **kwargs: original_client(
         transport=httpx.MockTransport(respond), **kwargs))
@@ -98,6 +98,10 @@ def test_deepseek_adapter_contract_without_network(index, monkeypatch):
     }
     assert result.status == "answered"
     assert result.generation_mode == "deepseek"
+    assert result.model_id == "test-model"
+    assert result.prompt_version == "qa-json-evidence-v1"
+    assert result.token_usage == {"prompt_tokens": 42, "completion_tokens": 12, "total_tokens": 54}
+    assert result.latency_ms is not None and result.latency_ms >= 0
     assert result.citations
 
 

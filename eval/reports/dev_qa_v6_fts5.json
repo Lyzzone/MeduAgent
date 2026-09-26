@@ -1,0 +1,238 @@
+{
+  "dataset": "course_qa_dev_v1",
+  "kind": "hand-authored development checks; not a frozen independent test set",
+  "corpus_commit": "0e1648565ab60cadc70d2bdfbd9fae0b57208383",
+  "evaluated_at_utc": "2026-09-26T04:17:49.238864+00:00",
+  "retrieval": {
+    "metric": "Recall@5",
+    "hits": 12,
+    "total": 12,
+    "value": 1.0
+  },
+  "out_of_scope": {
+    "metric": "retrieval_refusal_rate",
+    "refused": 3,
+    "total": 3,
+    "value": 1.0
+  },
+  "positive_samples": [
+    {
+      "id": "git-1",
+      "question": "Git 是什么，可以做什么？",
+      "gold_chunk_ids": [
+        "cd75ea6fccf66d3ba261"
+      ],
+      "retrieved_chunk_ids": [
+        "cd75ea6fccf66d3ba261",
+        "9eae6a30165b4bf4f0b7",
+        "bab69769c6868ad6df36",
+        "ab8984014315c1a550bb",
+        "e598d3d982867d9cf69d"
+      ],
+      "first_gold_rank": 1,
+      "hit": true
+    },
+    {
+      "id": "git-2",
+      "question": "GitHub 是什么，如何托管 Git 仓库？",
+      "gold_chunk_ids": [
+        "86b95dc2b4990b180d18"
+      ],
+      "retrieved_chunk_ids": [
+        "cd75ea6fccf66d3ba261",
+        "86b95dc2b4990b180d18",
+        "880f04188aba46b2a49d",
+        "87c25b43cfdd624b98a4",
+        "9eae6a30165b4bf4f0b7"
+      ],
+      "first_gold_rank": 2,
+      "hit": true
+    },
+    {
+      "id": "cli-1",
+      "question": "Shell 在命令行中负责什么？",
+      "gold_chunk_ids": [
+        "34876c9ffcf16cbde24c"
+      ],
+      "retrieved_chunk_ids": [
+        "34876c9ffcf16cbde24c",
+        "ed69286052827fc5ce31",
+        "3419da3afb90cd580584",
+        "38f0871240d35a88f351",
+        "ae6639920321a8267d18"
+      ],
+      "first_gold_rank": 1,
+      "hit": true
+    },
+    {
+      "id": "cli-2",
+      "question": "Terminal 终端是什么？",
+      "gold_chunk_ids": [
+        "a2ec0f5e5e249b1ccb6f"
+      ],
+      "retrieved_chunk_ids": [
+        "a2ec0f5e5e249b1ccb6f",
+        "38f0871240d35a88f351",
+        "e7e02b5d7b7bb6a0ef4d",
+        "e82327cb716d49d0ce23",
+        "0fc84bc0a1e40a7219ff"
+      ],
+      "first_gold_rank": 1,
+      "hit": true
+    },
+    {
+      "id": "http-1",
+      "question": "HTTP GET 请求有什么用途？",
+      "gold_chunk_ids": [
+        "533d479764aad6d6fece"
+      ],
+      "retrieved_chunk_ids": [
+        "533d479764aad6d6fece",
+        "fcc2631b19fc86708603",
+        "f9b34ccfaee8d8146796",
+        "c9df979acc7c3b144955",
+        "530d2cf23c875dc5759e"
+      ],
+      "first_gold_rank": 1,
+      "hit": true
+    },
+    {
+      "id": "http-2",
+      "question": "HTTP POST 请求有什么用途？",
+      "gold_chunk_ids": [
+        "8e0ab7f6ef62b4e0580f"
+      ],
+      "retrieved_chunk_ids": [
+        "c9df979acc7c3b144955",
+        "8e0ab7f6ef62b4e0580f",
+        "522a5f2cdf4e816edceb",
+        "57645e1230c8b6cd3509",
+        "519a7c3c2679786653f7"
+      ],
+      "first_gold_rank": 2,
+      "hit": true
+    },
+    {
+      "id": "rest-1",
+      "question": "REST 客户端是什么？",
+      "gold_chunk_ids": [
+        "99561a2bf308b71632a6",
+        "b36f0253171b1c036761",
+        "b4378a3399727d4314dc",
+        "ca06f3339052cdd88bb7",
+        "efd25aedef7aa7b09bae",
+        "fb0aa60d8379b40d4957"
+      ],
+      "retrieved_chunk_ids": [
+        "ab8fdc5c8c201dbcc6a8",
+        "fb0aa60d8379b40d4957",
+        "efd25aedef7aa7b09bae",
+        "ca06f3339052cdd88bb7",
+        "b36f0253171b1c036761"
+      ],
+      "first_gold_rank": 2,
+      "hit": true
+    },
+    {
+      "id": "rest-2",
+      "question": "如何从 REST 服务器获取数据？",
+      "gold_chunk_ids": [
+        "8c0eedf5604839315659"
+      ],
+      "retrieved_chunk_ids": [
+        "ab8fdc5c8c201dbcc6a8",
+        "8c0eedf5604839315659",
+        "b36f0253171b1c036761",
+        "aeab02d48f6276537702",
+        "73e2b2e11a8f51a0e6ad"
+      ],
+      "first_gold_rank": 2,
+      "hit": true
+    },
+    {
+      "id": "python-1",
+      "question": "Python JSON API 如何实现分页？",
+      "gold_chunk_ids": [
+        "08d4731a41f7c0b45a6b"
+      ],
+      "retrieved_chunk_ids": [
+        "08d4731a41f7c0b45a6b",
+        "cc72145c407fad7b2899",
+        "8cc967271888352305e5",
+        "c5c99f66a9b87cf2aa54",
+        "0bc9c51d373d4c251d82"
+      ],
+      "first_gold_rank": 1,
+      "hit": true
+    },
+    {
+      "id": "python-2",
+      "question": "Python JSON API 如何过滤和排序？",
+      "gold_chunk_ids": [
+        "c5c99f66a9b87cf2aa54"
+      ],
+      "retrieved_chunk_ids": [
+        "c5c99f66a9b87cf2aa54",
+        "1d09b2c52ab133fee124",
+        "0bc9c51d373d4c251d82",
+        "b0f912f8eb3c9a1b1bb0",
+        "971e0919abaaa1fda629"
+      ],
+      "first_gold_rank": 1,
+      "hit": true
+    },
+    {
+      "id": "sql-1",
+      "question": "SQL 内连接是什么？",
+      "gold_chunk_ids": [
+        "c1a7d3742e136660193a",
+        "e09d3cccf77589f93962"
+      ],
+      "retrieved_chunk_ids": [
+        "e09d3cccf77589f93962",
+        "c1a7d3742e136660193a",
+        "cd297675a258653ad42c",
+        "bdef6270d23813680719",
+        "a5ac4823d23f58956084"
+      ],
+      "first_gold_rank": 1,
+      "hit": true
+    },
+    {
+      "id": "sql-2",
+      "question": "SQL 左连接与右连接如何使用？",
+      "gold_chunk_ids": [
+        "d131621a085774f85863"
+      ],
+      "retrieved_chunk_ids": [
+        "d131621a085774f85863",
+        "1d034fbf39c77968dfaa",
+        "d26214c7abbbd4ccf721",
+        "4359d16505c56e899a35",
+        "2b84586ff1df10a48b47"
+      ],
+      "first_gold_rank": 1,
+      "hit": true
+    }
+  ],
+  "negative_samples": [
+    {
+      "id": "out-1",
+      "question": "量子纠缠的定义是什么？",
+      "retrieved_chunk_ids": [],
+      "refused": true
+    },
+    {
+      "id": "out-2",
+      "question": "如何制作意大利肉酱面？",
+      "retrieved_chunk_ids": [],
+      "refused": true
+    },
+    {
+      "id": "out-3",
+      "question": "明天北京的天气怎么样？",
+      "retrieved_chunk_ids": [],
+      "refused": true
+    }
+  ]
+}

@@ -29,6 +29,10 @@ class QAResult(BaseModel):
     answer: str
     citations: list[Citation] = Field(default_factory=list)
     generation_mode: str
+    model_id: str | None = None
+    prompt_version: str | None = None
+    token_usage: dict[str, int] | None = None
+    latency_ms: float | None = None
 
 
 class QAState(TypedDict, total=False):
@@ -38,6 +42,10 @@ class QAState(TypedDict, total=False):
     citation_ids: list[str]
     status: str
     generation_mode: str
+    model_id: str | None
+    prompt_version: str | None
+    token_usage: dict[str, int] | None
+    latency_ms: float | None
 
 
 def build_qa_graph(db_path: Path, generator: Generator):
@@ -52,8 +60,15 @@ def build_qa_graph(db_path: Path, generator: Generator):
 
     def answer(state: QAState) -> QAState:
         draft = generator.generate(state["question"], state["evidence"])
-        return {"answer": draft.answer, "citation_ids": draft.citation_ids,
-                "generation_mode": draft.mode}
+        return {
+            "answer": draft.answer,
+            "citation_ids": draft.citation_ids,
+            "generation_mode": draft.mode,
+            "model_id": draft.model_id,
+            "prompt_version": draft.prompt_version,
+            "token_usage": draft.token_usage,
+            "latency_ms": draft.latency_ms,
+        }
 
     def validate(state: QAState) -> QAState:
         allowed = {item.chunk_id for item in state["evidence"]}
@@ -93,5 +108,9 @@ def ask(graph, question: str) -> QAResult:
         )
         for item in state["evidence"] if item.chunk_id in cited
     ]
-    return QAResult(status=state["status"], answer=state["answer"],
-                    citations=citations, generation_mode=state["generation_mode"])
+    return QAResult(
+        status=state["status"], answer=state["answer"], citations=citations,
+        generation_mode=state["generation_mode"],
+        model_id=state.get("model_id"), prompt_version=state.get("prompt_version"),
+        token_usage=state.get("token_usage"), latency_ms=state.get("latency_ms"),
+    )

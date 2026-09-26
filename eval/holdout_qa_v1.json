@@ -1,0 +1,241 @@
+{
+  "name": "course_qa_holdout_v1",
+  "purpose": "Frozen after the nine-document corpus snapshot; not used to tune the current FTS5 retriever.",
+  "created_on": "2026-09-26",
+  "annotation": "Single-author labels checked against source chunks; an independent second reviewer is still needed.",
+  "corpus_commit": "0e1648565ab60cadc70d2bdfbd9fae0b57208383",
+  "corpus_manifest_sha256": "78BD4FABD439CFC1BFC66B60DC07AFEB77C814BA498A738BDB190435685A455C",
+  "top_k": 5,
+  "positive": [
+    {
+      "id": "h01",
+      "category": "comparison",
+      "question": "HTTP 和 HTTPS 传输数据时的主要安全差异是什么？",
+      "gold_chunk_ids": [
+        "0297c21a5af96d43ef01"
+      ],
+      "answer_points": "HTTPS 加密传输，HTTP 不提供同等加密保护。"
+    },
+    {
+      "id": "h02",
+      "category": "paraphrase",
+      "question": "浏览器和服务器用同一把密钥加解密，这属于哪种方式？",
+      "gold_chunk_ids": [
+        "6dac86166bdb566545db"
+      ],
+      "answer_points": "对称加密使用同一密钥。"
+    },
+    {
+      "id": "h03",
+      "category": "fact",
+      "question": "非对称加密中的公钥和私钥分别承担什么作用？",
+      "gold_chunk_ids": [
+        "acb93b25143d563a2439"
+      ],
+      "answer_points": "使用公钥和私钥组成密钥对进行通信保护。"
+    },
+    {
+      "id": "h04",
+      "category": "paraphrase",
+      "question": "网站证书怎样帮助浏览器核对服务端身份？",
+      "gold_chunk_ids": [
+        "1f61de5ae929f2d3e09b"
+      ],
+      "answer_points": "证书用于确认所连接服务端与域名的身份关系。"
+    },
+    {
+      "id": "h05",
+      "category": "paraphrase",
+      "question": "想临时启动 MySQL 而不把依赖装进本机，资料给了什么做法？",
+      "gold_chunk_ids": [
+        "a2fe9d8929a77e1725ac"
+      ],
+      "answer_points": "用 Docker 数据库容器运行 MySQL。"
+    },
+    {
+      "id": "h06",
+      "category": "fact",
+      "question": "这篇 Docker 教程中，停止数据库容器后为什么集成测试会失败？",
+      "gold_chunk_ids": [
+        "3400b7b4e77274caf61b"
+      ],
+      "answer_points": "测试依赖真实 MySQL 数据库。"
+    },
+    {
+      "id": "h07",
+      "category": "fact",
+      "question": "教程用哪个工具构建 Java 应用容器，并强调了什么好处？",
+      "gold_chunk_ids": [
+        "f2a478e486f815b5afd1"
+      ],
+      "answer_points": "使用 Jib 构建更小且可复制的容器。"
+    },
+    {
+      "id": "h08",
+      "category": "paraphrase",
+      "question": "把未经信任的输入拼进 SQL 字符串为什么危险？",
+      "gold_chunk_ids": [
+        "73dab07b7de990deab81"
+      ],
+      "answer_points": "输入可能被当作 SQL 控制语句执行。"
+    },
+    {
+      "id": "h09",
+      "category": "fact",
+      "question": "参数化查询为什么能降低 SQL 注入风险？",
+      "gold_chunk_ids": [
+        "1993346b9749d18e8eb6"
+      ],
+      "answer_points": "数据库区分预先定义的 SQL 代码与后来传入的数据。"
+    },
+    {
+      "id": "h10",
+      "category": "paraphrase",
+      "question": "数据库账号只给必要权限，对 SQL 注入造成的损害有什么影响？",
+      "gold_chunk_ids": [
+        "02e5831e173fa2eb0bd7"
+      ],
+      "answer_points": "限制攻击可能造成的损害，但并非直接阻止注入。"
+    },
+    {
+      "id": "h11",
+      "category": "paraphrase",
+      "question": "改代码时怎样先隔离实验改动，避免直接影响主线？",
+      "gold_chunk_ids": [
+        "4eeab6e00046ac62c146"
+      ],
+      "answer_points": "使用 Git 分支隔离改动。"
+    },
+    {
+      "id": "h12",
+      "category": "fact",
+      "question": "Git 文件暂存后，教程用什么命令生成一个带消息的提交？",
+      "gold_chunk_ids": [
+        "e598d3d982867d9cf69d"
+      ],
+      "answer_points": "git commit -m。"
+    },
+    {
+      "id": "h13",
+      "category": "fact",
+      "question": "REST 请求的方法字段让服务器知道什么？",
+      "gold_chunk_ids": [
+        "ab8fdc5c8c201dbcc6a8"
+      ],
+      "answer_points": "方法表明读取、保存、更新或删除等操作意图。"
+    },
+    {
+      "id": "h14",
+      "category": "fact",
+      "question": "教程里的 POST /add 接口接收什么数据并返回什么？",
+      "gold_chunk_ids": [
+        "73e2b2e11a8f51a0e6ad"
+      ],
+      "answer_points": "接收两个数字并返回两数之和。"
+    },
+    {
+      "id": "h15",
+      "category": "fact",
+      "question": "Python JSON API 示例通过哪个库连接数据库并建立 artists 表？",
+      "gold_chunk_ids": [
+        "76de40c3bf16d4a21215"
+      ],
+      "answer_points": "Flask 示例使用 SQLAlchemy 连接数据库并定义 artists 表。"
+    },
+    {
+      "id": "h16",
+      "category": "paraphrase",
+      "question": "艺术家和艺术品分别建表时，资料怎样表达二者关联？",
+      "gold_chunk_ids": [
+        "61f2a7f4324f8726861b"
+      ],
+      "answer_points": "使用关联表和对应资源关系。"
+    },
+    {
+      "id": "h17",
+      "category": "comparison",
+      "question": "FULL OUTER JOIN 与 CROSS JOIN 相比，对连接条件有什么要求？",
+      "gold_chunk_ids": [
+        "eb453d484a834ff75767"
+      ],
+      "answer_points": "FULL OUTER JOIN 需要连接条件。"
+    },
+    {
+      "id": "h18",
+      "category": "fact",
+      "question": "如何用 LEFT JOIN 找出没有电影记录的导演？",
+      "gold_chunk_ids": [
+        "2b84586ff1df10a48b47"
+      ],
+      "answer_points": "以导演为左表连接电影，再筛选右表为空的行。"
+    },
+    {
+      "id": "h19",
+      "category": "paraphrase",
+      "question": "想知道当前终端运行的 Shell 名称，教程建议输入什么？",
+      "gold_chunk_ids": [
+        "8a057e19b7d74a2117b2"
+      ],
+      "answer_points": "echo $0。"
+    },
+    {
+      "id": "h20",
+      "category": "fact",
+      "question": "HTTP PUT 更新资源时，请求体通常如何作用于目标资源？",
+      "gold_chunk_ids": [
+        "88c999842490410e0729"
+      ],
+      "answer_points": "使用请求体替换整个资源。"
+    }
+  ],
+  "negative": [
+    {
+      "id": "n01",
+      "category": "outside_domain",
+      "question": "意大利肉酱面的传统做法需要哪些食材？",
+      "reason": "课程语料没有烹饪资料。"
+    },
+    {
+      "id": "n02",
+      "category": "outside_domain",
+      "question": "太阳系中土星有多少颗卫星？",
+      "reason": "课程语料没有天文学资料。"
+    },
+    {
+      "id": "n03",
+      "category": "in_domain_missing",
+      "question": "这批教程如何配置 Kubernetes Pod 的亲和性规则？",
+      "reason": "九篇资料没有 Kubernetes 配置说明。"
+    },
+    {
+      "id": "n04",
+      "category": "in_domain_missing",
+      "question": "Docker Compose profiles 应如何配置？",
+      "reason": "Docker 教程未覆盖 Compose profiles。"
+    },
+    {
+      "id": "n05",
+      "category": "version_current",
+      "question": "Python 3.15 正式版新增了哪些语法特性？",
+      "reason": "固定语料不包含未来版本的权威发布说明。"
+    },
+    {
+      "id": "n06",
+      "category": "version_current",
+      "question": "GitHub 2026 年免费计划的仓库数量上限是多少？",
+      "reason": "旧教程不构成当前产品政策依据。"
+    },
+    {
+      "id": "n07",
+      "category": "in_domain_missing",
+      "question": "HTTP/3 的 QUIC 握手具体有几次往返？",
+      "reason": "HTTP/HTTPS 教程没有 HTTP/3 QUIC 握手细节。"
+    },
+    {
+      "id": "n08",
+      "category": "in_domain_missing",
+      "question": "资料中给出的 PostgreSQL 17 WAL 参数推荐值是多少？",
+      "reason": "这些教程未给 PostgreSQL 17 WAL 调参建议。"
+    }
+  ]
+}
