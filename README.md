@@ -25,7 +25,7 @@ MEduAgent 计划提供课程资料问答、简历诊断、试卷批改和模拟�
 
 面试演示可按 [5 分钟公开演示指南](docs/DEMO_GUIDE.md) 操作；`python -m demo.run_demo` 不需密钥、私有 PDF 或已建立的本地索引。根目录自写代码的许可证尚未选择，公开教程仍按其独立许可证使用。
 
-首次公开提交 `4aba504` 的 [GitHub Actions 运行](https://github.com/Lyzzone/MeduAgent/actions/runs/36216182493) 已通过（2026-09-26）；后续提交需要各自通过 CI。
+首次公开提交 `4aba504` 的 [GitHub Actions 运行](https://github.com/Lyzzone/MeduAgent/actions/runs/36216182493) 已通过（2026-09-26）；阶段 B 的 LF 快照修复提交 `6bf9b3d` 的 [Actions 运行](https://github.com/Lyzzone/MeduAgent/actions/runs/36219376418) 也已通过。后续提交需要各自通过 CI。
 
 公开课程资料见 [freeCodeCamp 中文教程语料](corpus/freecodecamp_zh/README.md)，保留上游署名、CC BY-SA 4.0 许可证、提交号与文件哈希。新增的单人标注冻结集与原始失败案例见 [阶段 B 问答报告](docs/STAGE_B_QA_EVAL.md)；真实生成模型与向量对照尚待调用验证；受控的公开语料模型探针用法见同一报告。个人求职文档请按 [放置说明](docs/CAREER_DATA_PLACEMENT.md) 保存在 Git 忽略目录中。
 
