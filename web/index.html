@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f9fa" />
+    <title>MEduAgent · 选择工作台</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand brand-link" href="/" aria-label="MEduAgent 首页"><span class="brand-mark" aria-hidden="true">M<span>·</span></span><span>MEduAgent</span></a>
+        <span class="build-tag">IT 学习与教学 · 本地演示</span>
+      </header>
+      <main>
+        <section class="route-hero" aria-labelledby="page-title">
+          <div class="route-hero-copy">
+            <p class="eyebrow">四个任务 · 四个独立入口</p>
+            <h1 id="page-title">今天要解决<br /><em>哪件事？</em></h1>
+            <p class="intro-copy">选一个任务进入对应工作台。每个结果都标明依据或规则；需要人工判断的地方会明确提示。</p>
+          </div>
+          <div class="route-map" aria-hidden="true"><span class="route-map-hub">M·</span><span class="route-map-line route-map-line-a"></span><span class="route-map-line route-map-line-b"></span><span class="route-map-line route-map-line-c"></span><span class="route-map-line route-map-line-d"></span><span class="route-map-point point-a"></span><span class="route-map-point point-b"></span><span class="route-map-point point-c"></span><span class="route-map-point point-d"></span></div>
+        </section>
+        <section class="route-section" aria-labelledby="choose-heading">
+          <div class="section-bar"><span id="choose-heading">选择工作台</span><span>CHOOSE A TASK</span></div>
+          <div class="route-grid">
+            <a class="route-card route-qa" href="/agents/qa">
+              <div class="route-card-top"><span class="route-glyph" aria-hidden="true">?</span><span class="route-state">已接入资料检索</span></div>
+              <h2>课程资料问答</h2><p>提出 IT 学习问题，查看教程中的相关片段和来源。找不到依据时明确说明。</p>
+              <span class="route-foot"><span>输入：学习问题</span><strong>进入问答工作台 ↗</strong></span>
+            </a>
+            <a class="route-card route-grading" href="/agents/grading">
+              <div class="route-card-top"><span class="route-glyph" aria-hidden="true">✓</span><span class="route-state">规则基线</span></div>
+              <h2>试卷批改</h2><p>客观题做精确匹配预览；主观题保留教师复核入口，不自动发布分数。</p>
+              <span class="route-foot"><span>输入：题目、答案与作答</span><strong>进入批改工作台 ↗</strong></span>
+            </a>
+            <a class="route-card route-resume" href="/agents/resume">
+              <div class="route-card-top"><span class="route-glyph" aria-hidden="true">▤</span><span class="route-state">规则基线</span></div>
+              <h2>简历审查</h2><p>对照目标岗位，检查技能关键词、项目经历和量化结果；建议由你核实后采用。</p>
+              <span class="route-foot"><span>输入：简历与岗位描述</span><strong>进入简历工作台 ↗</strong></span>
+            </a>
+            <a class="route-card route-interview" href="/agents/interview">
+              <div class="route-card-top"><span class="route-glyph" aria-hidden="true">↗</span><span class="route-state">规则基线</span></div>
+              <h2>模拟面试</h2><p>选择岗位方向、回答练习题，查看关键词覆盖提示和下一步追问。</p>
+              <span class="route-foot"><span>输入：方向与回答</span><strong>进入面试工作台 ↗</strong></span>
+            </a>
+          </div>
+        </section>
+        <aside class="route-note"><strong>当前版本</strong><span>课程问答已连接公开教程知识库。其余三个工作台提供可交互的规则基线，尚未接入大模型或持久化会话。私有 PDF 不会通过本网页开放。</span></aside>
+      </main>
+      <footer class="footer"><span>MEduAgent · 面向 IT 教培场景的 Agent 工程项目</span><span>演示结果用于学习和复核，不替代教师或招聘判断。</span></footer>
+    </div>
+  </body>
+</html>

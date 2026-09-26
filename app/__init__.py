@@ -1,0 +1,1 @@
+"""MEduAgent application package."""

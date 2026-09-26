@@ -1,0 +1,62 @@
+{
+  "name": "freecodecamp_zh_it_tutorial_sample",
+  "purpose": "MEduAgent retrieval test corpus",
+  "source_repository": "https://github.com/freeCodeCamp/chinese",
+  "source_commit": "0e1648565ab60cadc70d2bdfbd9fae0b57208383",
+  "downloaded_on": "2026-09-25",
+  "license": "CC-BY-SA-4.0",
+  "license_file": "LICENSE.md",
+  "license_sha256": "7ABE19EC9BB73B36141B999B861D24AD855E808BAFE0F81E84CCE28556F6C297",
+  "modifications": "none; original Markdown files copied byte-for-byte",
+  "files": [
+    {
+      "path": "command-line-for-beginners.md",
+      "upstream_path": "chinese/articles/command-line-for-beginners.md",
+      "original_url": "https://www.freecodecamp.org/news/command-line-for-beginners/",
+      "author": "Germán Cocca",
+      "translator": "luojiyin",
+      "sha256": "3CB52AE0D7F5647798882082BF811EED99934E345D5BB374EE54A91F3A7A0DD8"
+    },
+    {
+      "path": "git-and-github-for-beginners.md",
+      "upstream_path": "chinese/articles/git-and-github-for-beginners.md",
+      "original_url": "https://www.freecodecamp.org/news/git-and-github-for-beginners/",
+      "author": "Ihechikara Vincent Abba",
+      "translator": "luojiyin",
+      "sha256": "4FB9B4D51CE2D85FAE79BC54DCA132D04835792A799230124BE0292CB6D058BC"
+    },
+    {
+      "path": "http-request-methods-explained.md",
+      "upstream_path": "chinese/articles/http-request-methods-explained.md",
+      "original_url": "https://www.freecodecamp.org/news/http-request-methods-explained/",
+      "author": "Camila Ramos Garzon",
+      "translator": "ZhichengChen",
+      "sha256": "262B793050BE22E7B33680B0B11C6E823AC682B0A4568CF00689760B70A8B8F7"
+    },
+    {
+      "path": "rest-api-tutorial.md",
+      "upstream_path": "chinese/articles/rest-api-tutorial.md",
+      "original_url": "https://www.freecodecamp.org/news/rest-api-tutorial-rest-client-rest-service-and-api-calls-explained-with-code-examples/",
+      "author": "Vaibhav Kandwal",
+      "translator": "Humilitas",
+      "sha256": "4CF86693F101700CB7A9F155FFE173DC411A73BE7E28A6F2ACB02508DEDF46CE"
+    },
+    {
+      "path": "build-a-simple-json-api-in-python.md",
+      "upstream_path": "chinese/articles/build-a-simple-json-api-in-python.md",
+      "original_url": "https://www.freecodecamp.org/news/build-a-simple-json-api-in-python/",
+      "author": "Peter Gleeson",
+      "translator": "fearlessfe",
+      "reviewer": "miyaliu666",
+      "sha256": "9CBE2062F2E157A11FB5C95F6D5D1A362E7A99D8B13345782705EC9B08790125"
+    },
+    {
+      "path": "sql-joins-tutorial.md",
+      "upstream_path": "chinese/articles/sql-joins-tutorial.md",
+      "original_url": "https://www.freecodecamp.org/news/sql-joins-tutorial/",
+      "author": "John Mosesman",
+      "translator": "zhannicholas",
+      "sha256": "62722A9C7A88D4B1C207A0F1AA5E7DA3887243897EDA5E0CF5FFD770310CB85D"
+    }
+  ]
+}

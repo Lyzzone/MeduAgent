@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f9fa" />
+    <title>MEduAgent · 工作台</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script src="/assets/workbench.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand brand-link" href="/" aria-label="返回工作台选择"><span class="brand-mark" aria-hidden="true">M<span>·</span></span><span>MEduAgent</span></a>
+        <a class="build-tag back-link" href="/">← 返回工作台选择</a>
+      </header>
+      <main>
+        <section class="workbench-intro" aria-labelledby="workbench-title">
+          <p id="workbench-kind" class="eyebrow"></p>
+          <h1 id="workbench-title"></h1>
+          <p id="workbench-description" class="intro-copy"></p>
+          <p class="baseline-label">当前能力：本地规则基线 · 不调用大模型 · 不保存输入</p>
+        </section>
+        <div class="workbench-layout">
+          <section class="workspace workbench-form-section" aria-labelledby="form-heading">
+            <div class="section-bar"><span id="form-heading">输入资料</span><span>WORKSPACE</span></div>
+            <form id="agent-form" class="agent-form"></form>
+          </section>
+          <section class="result-section workbench-result-section" aria-labelledby="result-heading">
+            <div class="section-bar"><span id="result-heading">分析结果</span><span>REVIEW</span></div>
+            <div id="agent-status" class="status" role="status" aria-live="polite">提交后在这里查看结果。</div>
+            <div id="agent-result" class="agent-result" hidden></div>
+          </section>
+        </div>
+      </main>
+      <footer class="footer"><span>本页面为功能基线演示，结果需人工核查。</span><span>输入只用于本次请求，服务端不持久化保存。</span></footer>
+    </div>
+  </body>
+</html>

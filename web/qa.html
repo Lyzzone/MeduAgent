@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#d9e5ed" />
+    <title>MEduAgent · 课程资料问答</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script src="/assets/app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand brand-link" href="/" aria-label="返回工作台选择"><span class="brand-mark" aria-hidden="true">M<span>·</span></span><span>MEduAgent</span></a>
+        <a class="build-tag back-link" href="/">← 返回工作台选择</a>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <p class="eyebrow">面向 IT 学习资料的问答实验台</p>
+          <h1 id="page-title">从问题出发，<br /><em>回到原文。</em></h1>
+          <p class="intro-copy">在六篇开放许可的中文教程中查找线索。每条结果都能追溯到文章和片段；找不到依据时，系统会明确说明。</p>
+          <div class="corpus-line"><span class="corpus-dot"></span>当前语料：命令行、Git、HTTP、REST API、Python JSON API、SQL JOIN</div>
+        </section>
+
+        <section class="workspace" aria-label="课程资料提问">
+          <div class="section-bar"><span>提问</span><span>01 / 02</span></div>
+          <form id="question-form" class="question-form">
+            <label for="question">你想从教程中了解什么？</label>
+            <div class="input-row">
+              <input id="question" name="question" type="text" minlength="2" maxlength="400" required autocomplete="off" placeholder="例如：Git 和 GitHub 有什么区别？" />
+              <button id="submit-button" type="submit">查找资料 <span aria-hidden="true">↗</span></button>
+            </div>
+          </form>
+          <div class="examples" aria-label="示例问题">
+            <span>试着提问</span>
+            <button type="button" data-question="Git 和 GitHub 有什么区别？">Git 与 GitHub</button>
+            <button type="button" data-question="HTTP GET 和 POST 有什么区别？">GET 与 POST</button>
+            <button type="button" data-question="量子纠缠的定义是什么？">超出资料范围</button>
+          </div>
+        </section>
+
+        <section class="result-section" aria-labelledby="result-heading">
+          <div class="section-bar"><span id="result-heading">结果与依据</span><span>02 / 02</span></div>
+          <div id="status" class="status" role="status" aria-live="polite">输入问题后，结果会显示在这里。</div>
+          <div id="answer-panel" class="answer-panel" hidden>
+            <div class="answer-topline"><span id="answer-type" class="answer-type"></span><span id="source-count"></span></div>
+            <p id="answer" class="answer-text"></p>
+          </div>
+          <div id="sources" class="sources" aria-label="原文出处"></div>
+        </section>
+      </main>
+
+      <footer class="footer"><span>资料来源：freeCodeCamp 中文仓库 · CC BY-SA 4.0</span><span>本阶段为公开教程检索演示；默认模式不调用生成模型。</span></footer>
+    </div>
+  </body>
+</html>

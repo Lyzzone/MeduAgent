@@ -1,0 +1,63 @@
+{
+  "data_notice": "以下简历、岗位、作答和对话均为项目作者编写的虚构演示数据，不代表真实求职者或学员。",
+  "cases": [
+    {
+      "id": "course_qa",
+      "title": "课程资料：Git 与 GitHub",
+      "path": "/v1/qa",
+      "input": {"question": "Git 和 GitHub 有什么区别？"},
+      "expected": {"status": "retrieval_preview", "citations_min": 1}
+    },
+    {
+      "id": "grading_objective",
+      "title": "试卷批改：客观题",
+      "path": "/v1/grading/check",
+      "input": {
+        "question": "获取资源通常使用哪个 HTTP 方法？",
+        "reference_answer": "GET",
+        "student_answer": " get ",
+        "question_type": "objective",
+        "max_points": 10
+      },
+      "expected": {"status": "rule_scored", "suggested_points": 10, "review_required": false}
+    },
+    {
+      "id": "grading_subjective",
+      "title": "试卷批改：主观题人工复核边界",
+      "path": "/v1/grading/check",
+      "input": {
+        "question": "解释为何 RAG 答案需要引用来源。",
+        "reference_answer": "应能把结论对应到检索证据，方便核查并识别资料不足。",
+        "student_answer": "引用能帮助老师检查答案依据。",
+        "question_type": "subjective",
+        "max_points": 10
+      },
+      "rubric_for_future_teacher_review": {"evidence_traceability": 5, "insufficient_evidence_boundary": 5, "note": "仅作未来人工复核示例；当前规则接口不读取 rubric，也不为主观题打分。"},
+      "expected": {"status": "teacher_review_required", "suggested_points": null, "review_required": true}
+    },
+    {
+      "id": "resume_review",
+      "title": "简历审查：虚构候选人",
+      "path": "/v1/resume/review",
+      "input": {
+        "resume_text": "示例候选人。项目经历：使用 Python、FastAPI 和 SQL 做过课程管理接口，编写测试并记录接口响应时间。没有生产部署经验。",
+        "job_description": "教学平台后端岗位：需要 Python、FastAPI、SQL、Docker，能够维护接口与部署流程。"
+      },
+      "expected": {"status": "rule_preview", "missing_skills_contains": "Docker"}
+    },
+    {
+      "id": "interview_question",
+      "title": "模拟面试：领取 AI 方向问题",
+      "path": "/v1/interview/turn",
+      "input": {"track": "ai", "answer": ""},
+      "expected": {"status": "question_ready"}
+    },
+    {
+      "id": "interview_answer",
+      "title": "模拟面试：虚构回答",
+      "path": "/v1/interview/turn",
+      "input": {"track": "ai", "answer": "先检索课程资料，再基于证据生成回答，最后校验引用是否对应原文。"},
+      "expected": {"status": "practice_feedback", "covered_prompts_contains": "引用"}
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Local runtime data
+data/
+uploads/
+logs/
+*.db
+*.sqlite
+*.sqlite3
+*.db-wal
+*.db-shm
+
+# Python and frontend build outputs
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+node_modules/
+web/dist/
+.source-cache/
+
+# Private learning journal; keep interview study notes local
+.learning-notes/
